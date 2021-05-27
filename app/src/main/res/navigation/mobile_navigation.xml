@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="ru.mirea.miroshnichenko.mireaproject2.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/nav_gallery"
+        android:name="ru.mirea.miroshnichenko.mireaproject2.ui.gallery.GalleryFragment"
+        android:label="@string/menu_gallery"
+        tools:layout="@layout/fragment_gallery" />
+
+    <fragment
+        android:id="@+id/nav_slideshow"
+        android:name="ru.mirea.miroshnichenko.mireaproject2.ui.slideshow.SlideshowFragment"
+        android:label="@string/menu_slideshow"
+        tools:layout="@layout/fragment_slideshow" />
+    <fragment
+        android:id="@+id/nav_calculator"
+        android:name="ru.mirea.miroshnichenko.mireaproject2.Calculator"
+        android:label="fragment_calculator"
+        tools:layout="@layout/fragment_calculator" />
+    <fragment
+        android:id="@+id/nav_browser"
+        android:name="ru.mirea.miroshnichenko.mireaproject2.WebViewFragment"
+        android:label="fragment_web_view"
+        tools:layout="@layout/fragment_web_view" />
+    <fragment
+        android:id="@+id/nav_music_player"
+        android:name="ru.mirea.miroshnichenko.mireaproject2.MusicPlayer"
+        android:label="fragment_music_player"
+        tools:layout="@layout/fragment_music_player" />
+    <fragment
+        android:id="@+id/nav_sensors"
+        android:name="ru.mirea.miroshnichenko.mireaproject2.Sensors"
+        android:label="fragment_sensors"
+        tools:layout="@layout/fragment_sensors" />
+    <fragment
+        android:id="@+id/nav_camera"
+        android:name="ru.mirea.miroshnichenko.mireaproject2.Camera"
+        android:label="fragment_camera"
+        tools:layout="@layout/fragment_camera" />
+    <fragment
+        android:id="@+id/nav_studio"
+        android:name="ru.mirea.miroshnichenko.mireaproject2.AudioStudio"
+        android:label="fragment_audio_studio"
+        tools:layout="@layout/fragment_audio_studio" />
+</navigation>
