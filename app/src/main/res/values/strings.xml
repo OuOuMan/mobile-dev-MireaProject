@@ -12,6 +12,8 @@
     <string name="sensors">Датчики</string>
     <string name="camera">Камера</string>
     <string name="studio">Студия звукозаписи</string>
+    <string name="settings">Настройки</string>
+    <string name="history">Истории</string>
 
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>

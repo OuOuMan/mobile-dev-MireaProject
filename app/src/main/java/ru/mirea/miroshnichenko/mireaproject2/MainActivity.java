@@ -1,10 +1,13 @@
 package ru.mirea.miroshnichenko.mireaproject2;
 
+import android.app.Dialog;
 import android.content.Context;
 import android.hardware.SensorManager;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Menu;
+import android.widget.Button;
+import android.widget.Toast;
 
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
@@ -22,6 +25,10 @@ public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
     private ActivityMainBinding binding;
+    CustomDialogFragment dialog;
+
+    AppDatabase db = App.getInstance().getDatabase();
+    HistoryItemDao historyItemDao = db.historyItemDaoDao();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,8 +43,11 @@ public class MainActivity extends AppCompatActivity {
         binding.appBarMain.fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+
+                dialog = new CustomDialogFragment();
+                dialog.show(getSupportFragmentManager(), "custom");
+                /*Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();*/
             }
         });
         DrawerLayout drawer = binding.drawerLayout;
@@ -48,14 +58,19 @@ public class MainActivity extends AppCompatActivity {
                 R.id.nav_home, R.id.nav_gallery,
                 R.id.nav_slideshow, R.id.nav_calculator,
                 R.id.nav_browser, R.id.nav_music_player,
-                R.id.nav_sensors, R.id.nav_camera
+                R.id.nav_sensors, R.id.nav_camera,
+                R.id.nav_music_player, R.id.nav_settings,
+                R.id.nav_history
         )
                 .setDrawerLayout(drawer)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
+
+
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

@@ -170,29 +170,6 @@ public class AudioStudio extends Fragment {
         }
     }
 
-    public void SaveToStorage(String folderToSave) {
-        OutputStream fOut = null;
-        Time time = new Time();
-        time.setToNow();
-
-        try {
-            File file = new File(folderToSave, Integer.toString(time.year) + Integer.toString(time.month) + Integer.toString(time.monthDay) + Integer.toString(time.hour) + Integer.toString(time.minute) + Integer.toString(time.second) +".mp3"); // создать уникальное имя для файла основываясь на дате сохранения
-            fOut = new FileOutputStream(file);
-
-
-            fOut.flush();
-            fOut.close();
-            MediaStore.Images.Media.insertImage(getActivity().getContentResolver(), file.getAbsolutePath(), file.getName(),  file.getName()); // регистрация в фотоальбоме
-            Log.i(TAG, "So cool");
-        }
-        catch (Exception e) // здесь необходим блок отслеживания реальных ошибок и исключений, общий Exception приведен в качестве примера
-        {
-            Log.i(TAG, "So bad");
-            Log.i(TAG, e.getMessage());
-            //return e.getMessage();
-        }
-    }
-
 
     // нажатие на кнопку старт
     public void onRecordStart(View view) {

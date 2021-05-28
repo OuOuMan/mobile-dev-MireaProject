@@ -40,5 +40,13 @@
             android:id="@+id/nav_studio"
             android:icon="@drawable/ic_launcher_foreground"
             android:title="@string/studio" />
+        <item
+            android:id="@+id/nav_settings"
+            android:icon="@drawable/ic_launcher_foreground"
+            android:title="@string/settings" />
+        <item
+            android:id="@+id/nav_history"
+            android:icon="@drawable/ic_launcher_foreground"
+            android:title="@string/history" />
     </group>
 </menu>
